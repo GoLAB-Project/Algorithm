@@ -5,7 +5,6 @@ import java.util.Map;
 class Solution {
 	    public Integer[] solution(String today, String[] terms, String[] privacies) {
 	        ArrayList<Integer> arrList = new ArrayList<>();
-	        
 	        Map<Character, Integer> pair = new HashMap<>();
 	        for(String a: terms) {
 	        	char key = a.charAt(0);
@@ -16,8 +15,6 @@ class Solution {
 	        		+(Integer.parseInt(today.substring(5, 7))-1)*28
 	        		+Integer.parseInt(today.substring(8, 10));
 	        
-	        
-	        
 	        int size = privacies.length;
 	        for(int i=0;i<size;i++){
 	        	int plusMonth = pair.get(privacies[i].charAt(11));	        	
@@ -27,12 +24,9 @@ class Solution {
 		        		+plusMonth*28-1;
 	        	if(todayValue>privaciesValue) {
 	        		arrList.add(i+1);
-	        	}
-	        	
+	        	}	
 	        }
 	        Integer[] answer =  arrList.toArray(new Integer[0]);
-	        
-	        
 	        return answer;
 	    }
 	}
