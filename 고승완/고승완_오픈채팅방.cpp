@@ -5,10 +5,10 @@
 using namespace std;
 
 typedef pair<string, int> psi; // <ID, in(0)/out(1)>
+char* NOTICE[2] = {"님이 들어왔습니다.", "님이 나갔습니다."};
 
 map<string, string> idToNickname;
 vector<psi> output;
-char* notices[2] = {"님이 들어왔습니다.", "님이 나갔습니다."};
 
 vector<string> solution(vector<string> record) {
     vector<string> answer;
@@ -32,7 +32,7 @@ vector<string> solution(vector<string> record) {
     
     // 출력 생성
     for(auto out : output) {
-        string ans = idToNickname[out.first] + notices[out.second];
+        string ans = idToNickname[out.first] + NOTICE[out.second];
         answer.push_back(ans);
     }
     
