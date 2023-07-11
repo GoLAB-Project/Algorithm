@@ -5,7 +5,7 @@ def setDummyNode(binary):
     lenOfBinary = len(binary)
     powNumber = 2
     
-    while lenOfBinary >= powNumber:
+    while lenOfBinary >= powNumber: # 2. 이걸 >에서 >=로 바꾸고 통과
         powNumber *= 2
     
     return '0' * ((powNumber - 1) - lenOfBinary) + binary
@@ -17,7 +17,7 @@ def dex2Binary(dex):
     while dex:
         binary.append(str(dex % 2))
         dex //= 2
-    binary.reverse() # 이걸 안해줘서 1시간 날림
+    binary.reverse() # 1. 이걸 안해줘서 1시간 날림
     
     return setDummyNode("".join(binary))
 
