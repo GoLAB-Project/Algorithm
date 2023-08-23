@@ -12,8 +12,8 @@ import java.awt.Point;
 
 
 class Solution {
-	static int[] dx = {1, 0, 0, -1}; // 하, 좌, 우, 상
-	static int[] dy = {0, -1, 1, 0};
+    static int[] dx = {1, 0, 0, -1}; // 하, 좌, 우, 상
+    static int[] dy = {0, -1, 1, 0};
     static String[] way = {"d", "l", "r", "u"}; // 사전 순
     static String result = ""; // 이동 결과
     static int N,M; // Map 크기
