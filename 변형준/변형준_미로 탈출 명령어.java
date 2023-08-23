@@ -12,8 +12,8 @@ import java.awt.Point;
 
 
 class Solution {
-    static int[] dx = {1, 0, 0, -1}; // 하, 좌, 우, 상
-    static int[] dy = {0, -1, 1, 0};
+	static int[] dx = {1, 0, 0, -1}; // 하, 좌, 우, 상
+	static int[] dy = {0, -1, 1, 0};
     static String[] way = {"d", "l", "r", "u"}; // 사전 순
     static String result = ""; // 이동 결과
     static int N,M; // Map 크기
@@ -25,8 +25,8 @@ class Solution {
     public String solution(int n, int m, int x, int y, int r, int c, int k) {
         N = n;
         M = m;
-        Point startP = new Point(x-1,y-1);
-        target = new Point(r-1,c-1);
+        Point startP = new Point(x,y);
+        target = new Point(r,c);
         K = k;
         int d = distance(startP, target);
         String answer = dfs(startP, d, "", cnt);
@@ -35,7 +35,7 @@ class Solution {
     }
     
     public int distance(Point startP, Point target) {
-        return Math.abs(target.x - startP.x) + Math.abs(target.y - startP.y);
+        return Math.abs(target.x - startP.x) + Math.abs(target.y - startP.y);  
     }
     
     public String dfs(Point startP, int d, String temp, int cnt){
@@ -51,7 +51,7 @@ class Solution {
             Point nextP = new Point(startP.x + dx[i], startP.y + dy[i]);
             
             // 움직인 좌표가 map을 벗어나는가?
-            if(nextP.x >= 0 && nextP.y >= 0 && nextP.x < N && nextP.y < M) {
+            if(nextP.x > 0 && nextP.y > 0 && nextP.x <= N && nextP.y <= M) {
             // 탈출까지의 거리가 실제 거리보다 크거나 같은가?
             // ex) 탈출까지 허용된 거리 targetD = 3, 실제 남은 거리 d = 4 -> 불가능 impossible
                 if(d <= targetD) {
